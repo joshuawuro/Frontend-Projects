@@ -1,10 +1,7 @@
 import Navbar from "./components/common/Navbar";
+import Home from "./components/Home";
 
-const {
-  RouterProvider,
-  createBrowserRouter,
-  Outlet,
-} = require("react-router-dom");
+import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 
 const Root = () => {
   return (
@@ -19,7 +16,12 @@ const router = createBrowserRouter([
   {
     root: "/",
     element: <Root />,
-    children: {},
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+    ],
   },
 ]);
 
